@@ -6,8 +6,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Fang:Hello web.</title>
+    {#link标签定义了文档与外部资源之间的关系#}
     <link rel="icon"
           href="{{ url_for('static', filename='images/favicon.ico') }}">
+    {#为网页定义描述内容:#}
+    <meta name="description" content="Fang's personal website.">
+    {#为搜索引擎定义关键词:#}
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    {#定义网页作者:#}
+    <meta name="author" content="Fang Chennian">
+    {#每30秒钟刷新当前页面:#}
+    <meta http-equiv="refresh" content="30">
+
+    <style>
+        body {
+            background-color: wheat;
+        }
+
+        p {
+            color: black;
+        }
+    </style>
 </head>
 <!--可见的页面内容-->
 <body>
@@ -139,9 +158,79 @@
     <b>注意:</b> 链接的单词之间空格使用 %20 代替，以确保浏览器可以正常显示文本。
 </p>
 
+<p>
+    <a href="https://www.baidu.com/" target="_blank">
+        _blank -- 在新窗口中打开链接</a>
+    <br>
+    <a href="https://www.baidu.com/" target="_parent">
+        _parent -- 在父窗体中打开链接</a>
+    <br>
+    <a href="https://www.baidu.com/" target="_self">
+        _self -- 在当前窗体打开链接,此为默认值</a>
+    <br>
+    <a href="https://www.baidu.com/" target="_top">
+        _top -- 在当前窗体打开链接，并替换当前的整个窗体(框架页)</a>
+</p>
+
+<h3>6.HTML head</h3>
+<p>
+    &lthead> 元素包含了所有的头部标签元素。<br>
+    在 &lthead>元素中你可以插入脚本（scripts）,<br>
+    样式文件（CSS），及各种meta信息。<br>
+
+    可以添加在头部区域的元素标签为: <br>
+    &lttitle>, &ltstyle>, &ltmeta>, &ltlink>, <br>
+    &ltscript>,&ltnoscript> 和 &ltbase>。
+</p>
 
 
+<h3>7.HTML add CSS (Cascading Style Sheets)</h3>
+{#<div style="opacity:0.5;#}
+{#    position:absolute;#}
+{#    left:50px;#}
+{#    width:300px;#}
+{#    height:150px;#}
+{#    background-color:#40B3DF">#}
+{#</div>#}
 
+<div style="font-family:verdana;padding:20px;
+    border-radius:10px;border:10px solid #EE872A;">
+
+    <div style="opacity:0.3;position:absolute;left:120px;
+    width:100px;height:200px;background-color:#8AC007"></div>
+
+    <h3>Look! Styles and colors</h3>
+
+    <div style="letter-spacing:12px;">Manipulate Text</div>
+
+    <div style="color:#40B3DF;">Colors
+        <span style="background-color:#B4009E;color:#ffffff;">Boxes</span>
+    </div>
+
+    <div style="color:#000000;">and more...</div>
+</div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
