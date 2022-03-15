@@ -185,13 +185,13 @@
 
 
 <h3>7.HTML add CSS (Cascading Style Sheets)</h3>
-{#<div style="opacity:0.5;#}
-{#    position:absolute;#}
-{#    left:50px;#}
-{#    width:300px;#}
-{#    height:150px;#}
-{#    background-color:#40B3DF">#}
-{#</div>#}
+<div style="opacity:0.5;
+    position:absolute;
+    left:50px;
+    width:300px;
+    height:150px;
+    background-color:#40B3DF">
+</div>
 
 <div style="font-family:verdana;padding:20px;
     border-radius:10px;border:10px solid #EE872A;">
@@ -209,6 +209,46 @@
 
     <div style="color:#000000;">and more...</div>
 </div>
+
+<h1 style="text-align:center;">居中对齐的标题</h1>
+<p>这是一个段落。</p>
+
+<h1 style="font-family:verdana;">一个标题</h1>
+<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+
+<h2 style="background-color:red;">这是一个标题</h2>
+<p style="background-color:green;">这是一个段落。</p>
+
+
+<h3>8.HTML add images</h3>
+<p>
+    一个图像:
+    <img src="{{ url_for('static', filename='images/panda.png') }}"
+         alt="Smiley face" width="65" height="65"></p>
+<p>
+    一个动图:
+    <img src="{{ url_for('static', filename='images/totoro.gif') }}"
+         alt="Computer man" width="65" height="65"></p>
+<p>
+    注意插入动图的语法和静态图的语法是一样的。
+</p>
+
+<p>点击下图的不同的位置，注意变化：</p>
+
+<img src="{{ url_for('static', filename='images/panda.png') }}"
+     width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+{#    1、矩形：(左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2))#}
+    <area shape="rect" coords="0,0,82,126" alt="Sun"
+          href="https://www.baidu.com/" target="_blank">
+{#    2、圆形：(圆心坐标为(X1,y1)，半径为r)#}
+    <area shape="circle" coords="90,58,3" alt="Mercury"
+          href="https://im.qq.com/" target="_blank">
+{#    3、多边形：(各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......)#}
+    <area shape="circle" coords="124,58,8" alt="Venus"
+          href="https://weixin.qq.com/" target="_blank">
+</map>
 
 </body>
 </html>
