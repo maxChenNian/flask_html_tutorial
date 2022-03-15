@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Fang:Hello web.</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="icon"
+          href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
 <!--可见的页面内容-->
 <body>
@@ -35,8 +36,10 @@
 <h5>This is 5-level heading.</h5>
 <h6>This is 6-level heading.</h6>
 <p>This is the paragraph.</p>
-<p>HTML link <a href="https://github.com/">This is a link which is go to github.</a></p>
-<p>HTML image <img src="{{ url_for('static', filename='images/Faron.jpg') }}" width="360" height="450" alt="cat"></p>
+<p>HTML link <a href="https://github.com/">This is a link which is go to
+    github.</a></p>
+<p>HTML image <img src="{{ url_for('static', filename='images/Faron.jpg') }}"
+                   width="360" height="450" alt="cat"></p>
 
 
 <h3><a id="C2">2.HTML element</a></h3>
@@ -119,7 +122,8 @@
 <h3>5.HTML link</h3>
 <p>无边框的图片链接:
     <a href="https://github.com/">
-        <img src="{{ url_for('static', filename='images/panda.png') }}" alt="HTML 教程" width="65" height="65"></a></p>
+        <img src="{{ url_for('static', filename='images/panda.png') }}"
+             alt="HTML 教程" width="65" height="65"></a></p>
 
 <p>在当前页面链接到指定位置
     <a href="#C2">查看章节 2.HTML element</a>
@@ -136,7 +140,7 @@
 </p>
 
 
-<p>nihao222</p>
+
 
 
 </body>
