@@ -40,6 +40,7 @@
 <script>
     function changeImage() {
         let element1 = document.getElementById('myimage');
+        console.log(element1.src);
         if (element1.src.match("bulbon")) {
             element1.src = "{{ url_for('static', filename='images/pic_bulboff.gif') }}";
         } else {
@@ -47,9 +48,113 @@
         }
     }
 </script>
-<img id="myimage" onclick="changeImage()" src="{{ url_for('static', filename='images/pic_bulboff.gif') }}" width="100"
+<img id="myimage" onclick="changeImage()"
+     src="{{ url_for('static', filename='images/pic_bulboff.gif') }}"
+     width="100"
      height="180" alt="bulb">
 <p>点击灯泡就可以打开或关闭这盏灯</p>
 
+
+<p>
+    JavaScript 能够直接写入 HTML 输出流中：
+</p>
+<script>
+    document.write("<h1>这是一个标题</h1>");
+    document.write("<p>这是一个段落。</p>");
+</script>
+<p>
+    您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+    如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+</p>
+
+<h1>我的第二个 JavaScript</h1>
+<p>
+    JavaScript 能够对事件作出反应。比如对按钮的点击：
+</p>
+<button type="button" onclick="alert('欢迎!')">点我!</button>
+
+
+<h1>我的第三段 JavaScript</h1>
+<p id="demo3">
+    JavaScript 能改变 HTML 元素的内容。
+</p>
+
+<script>
+    function myFunction1() {
+        let x = document.getElementById("demo3");
+        if (x.innerHTML.match("Fang")) {
+            x.innerHTML = "JavaScript 能改变 HTML 元素的内容。";
+        } else {
+            x.innerHTML = "Hello Fang Chennian!";
+        }
+        console.log(x);
+    }
+</script>
+<button type="button" onclick="myFunction1()">快来点我！</button>
+
+<h1>我的第四段 JavaScript</h1>
+<p id="demo4">
+    JavaScript 能改变 HTML 元素的样式。
+</p>
+<script>
+    function changeStyle1() {
+        let x = document.getElementById("demo4");
+        x.style.color = "green";
+        x.style.backgroundColor = "black";
+    }
+
+    function changeStyle2() {
+        let x = document.getElementById("demo4");
+        console.log(x);
+        x.setAttribute('style', '');
+    }
+</script>
+<button type="button" onclick="changeStyle1()">改变样式</button>
+<button type="button" onclick="changeStyle2()">复原样式</button>
+
+
+<h1>我的第5段 JavaScript</h1>
+<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+<label>
+    <input id="demo5" type="text">
+</label>
+<script>
+    function judgeNum() {
+        let x = document.getElementById("demo5").value;
+
+        console.log(x)
+
+        if (x === "" || isNaN(x)) {
+            alert("This is not a num!");
+        } else {
+            alert("This is a num, very good!");
+        }
+    }
+</script>
+<button type="button" onclick="judgeNum()">判断是否为数字</button>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
