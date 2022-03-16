@@ -30,5 +30,341 @@
 </head>
 <body>
 
+<h3>10.HTML add block</h3>
+
+<p>HTML 可以通过 div 和 span 将元素组合起来 </p>
+
+<h3>11.HTML layout 布局</h3>
+
+<p>网页布局对改善网站的外观非常重要。
+
+    请慎重设计您的网页布局。</p>
+
+<h4>如何使用 div 元素添加布局。</h4>
+<div id="container" style="width:500px">
+
+    <div id="header" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">主要的网页标题</h1>
+    </div>
+
+    <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+        <b>菜单</b><br>
+        HTML<br>
+        CSS<br>
+        JavaScript
+    </div>
+
+    <div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+        内容在这里
+    </div>
+
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+        版权 © runoob.com
+    </div>
+</div>
+
+<h4>如何使用 table 元素添加布局。</h4>
+<table width="500" border="0">
+    <tr>
+        <td colspan="2" style="background-color:#FFA500;">
+            <h1>主要的网页标题</h1>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="background-color:#FFD700;width:100px;vertical-align:top;">
+            <b>菜单</b><br>
+            HTML<br>
+            CSS<br>
+            JavaScript
+        </td>
+        <td style="background-color:#eeeeee;height:200px;width:400px;vertical-align:top;">
+            内容在这里
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style="background-color:#FFA500;text-align:center;">
+            版权 © runoob.com
+        </td>
+    </tr>
+</table>
+
+
+<h3>11.HTML from and input data 表单和输入</h3>
+
+
+<form action="">
+    <label>First name:
+        <input type="text" name="firstname">
+    </label><br>
+    <label>Last name:
+        <input type="text" name="lastname">
+    </label>
+</form>
+
+<p><b>注意：</b> 表单本身是不可见的。并且注意一个文本字段的默认宽度是20个字符。</p>
+
+<form action="">
+    <label>
+        Username:
+        <input type="text" name="user">
+    </label><br>
+    <label>
+        Password:
+        <input type="password" name="password">
+    </label>
+</form>
+
+<p><b>注意：</b> 密码字段中的字符是隐藏的(显示为星号或圆圈)。</p>
+
+<form action="">
+    <label>
+        <input type="radio" name="sex" value="male">
+        Male
+    </label>Male<br>
+    <label>
+        <input type="radio" name="sex" value="female">
+        Female
+    </label>
+</form>
+
+<p><b>单选框 注意：</b>当用户点击一个单选按钮时，它就会被选中，其他同名的单选按钮就不会被选中。</p>
+
+
+<form action="">
+    <label>
+        <input type="checkbox" name="vehicle" value="Bike">
+        I have a bike
+    </label>I have a bike<br>
+    <label>
+        <input type="checkbox" name="vehicle" value="Car">
+        I have a car<br>
+    </label>
+    <label>
+        <input type="checkbox" name="vehicle" value="Car">
+        I have a bike<br>
+    </label>
+    <label>
+        <input type="checkbox" name="vehicle" value="Car">
+        I have a rocket
+    </label>
+</form>
+<p><b>多选框 注意：</b>当用户点击一个单选按钮时，它就会被选中，可以多选。</p>
+
+<p>下拉菜单</p>
+<form action="">
+    <label>
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </label>
+</form>
+
+<p>预选下拉菜单</p>
+<form action="">
+    <label>
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat" selected>Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </label>
+</form>
+
+
+<p>文本框输入</p>
+<label>
+<textarea rows="5" cols="30">
+我是一个文本框。
+</textarea>
+</label>
+
+<form action="">
+    <input type="button" value="我是一个按钮">
+</form>
+
+<p>带有边框的表单</p>
+<form action="">
+    <fieldset>
+        <legend>Personal information:</legend>
+        <label>
+            Name:
+            <input type="text" size="30">
+        </label><br>
+        <label>
+            E-mail:
+            <input type="text" size="30">
+        </label><br>
+        <label>
+            Date of birth:
+            <input type="text" size="10">
+        </label>
+    </fieldset>
+</form>
+
+<p>点击"提交"按钮，表单数据将被发送到服务器上的“demo-form.php”。</p>
+<form action="demo-form.php">
+    <label>
+        First name:
+        <input type="text" name="FirstName" value="Mickey">
+    </label><br>
+    <label>
+        Last name:
+        <input type="text" name="LastName" value="Mouse">
+    </label><br>
+    <input type="submit" value="提交">
+</form>
+
+<p>点击"提交"按钮，复选框表单数据将被发送到服务器上的“demo-form.php”。</p>
+<form action="demo-form.php" method="get">
+    <label>
+        <input type="checkbox" name="vehicle[]" value="Bike">
+        I have a bike
+    </label> I have a bike<br>
+    <label>
+        <input type="checkbox" name="vehicle[]" value="Car" checked="checked">
+        I have a car
+    </label> I have a car<br>
+    <input type="submit" value="提交">
+</form>
+
+
+<p>点击"提交"按钮，单选框表单数据将被发送到服务器上的“demo-form.php”。</p>
+<form action="demo-form.php" method="get">
+    <label>
+        <input type="radio" name="sex" value="Male">
+        Male
+    </label> Male<br>
+    <label>
+        <input type="radio" name="sex" value="Female" checked="checked">
+        Female
+    </label> Female<br>
+    <input type="submit" value="提交">
+</form>
+
+<h3>发送邮件到 someone@example.com:</h3>
+
+<form action="1091403476@eqq.com" method="post" enctype="text/plain">
+    Name:<br>
+    <label>
+        <input type="text" name="name" value="your name">
+    </label><br>
+    E-mail:<br>
+    <label>
+        <input type="text" name="mail" value="your email">
+    </label><br>
+    Comment:<br>
+    <label>
+        <input type="text" name="comment" value="your comment" size="50">
+    </label><br><br>
+    <input type="submit" value="发送">
+    <input type="reset" value="重置">
+</form>
+
+
+<h3>12.HTML iframe</h3>
+
+<iframe src="" width="200" height="200"></iframe>
+
+<p>一些旧的浏览器不支持 iframe。</p>
+<p>如果浏览器不支持 iframes 则不会显示。</p>
+
+
+<h3>13.HTML color</h3>
+<p style="background-color:#FFFF00">
+    通过十六进制设置背景颜色
+</p>
+
+<p style="background-color:rgb(255,255,0)">
+    通过 rgb 值设置背景颜色
+</p>
+
+<p style="background-color:yellow">
+    通过颜色名设置背景颜色
+</p>
+
+
+<h3>14.HTML script 脚本</h3>
+<script>
+    document.write("Hello World!")
+</script>
+<br>
+<script>
+    document.write("Hello World!")
+</script>
+<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+
+<p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
+
+
+<p>
+    JavaScript 能够直接写入 HTML 输出流中：
+</p>
+<script>
+    document.write("<h6>这是一个标题</h6>");
+    document.write("<p>这是一个段落。</p>");
+</script>
+<p>
+    您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+    如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+</p>
+
+<h4>我的第一个 JavaScript </h4>
+
+<p id="demo">
+    JavaScript 可以触发事件，就像按钮点击。</p>
+
+<script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    }
+</script>
+
+<button type="button" onclick="myFunction()">点我</button>
+
+<h4>我的第二段 JavaScript</h4>
+<p id="demo2">
+    JavaScript 能改变 HTML 元素的样式。
+</p>
+<script>
+    function myFunction2() {
+        x = document.getElementById("demo2") // 找到元素
+        x.style.color = "#ff0000";          // 改变样式
+    }
+</script>
+<button type="button" onclick="myFunction2()">点击这里</button>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
