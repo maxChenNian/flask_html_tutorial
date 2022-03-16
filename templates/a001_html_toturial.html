@@ -239,16 +239,354 @@
      width="145" height="126" alt="Planets" usemap="#planetmap">
 
 <map name="planetmap">
-{#    1、矩形：(左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2))#}
+    {# 1、矩形：(左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2))#}
     <area shape="rect" coords="0,0,82,126" alt="Sun"
           href="https://www.baidu.com/" target="_blank">
-{#    2、圆形：(圆心坐标为(X1,y1)，半径为r)#}
+    {# 2、圆形：(圆心坐标为(X1,y1)，半径为r)#}
     <area shape="circle" coords="90,58,3" alt="Mercury"
           href="https://im.qq.com/" target="_blank">
-{#    3、多边形：(各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......)#}
+    {# 3、多边形：(各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......)#}
     <area shape="circle" coords="124,58,8" alt="Venus"
           href="https://weixin.qq.com/" target="_blank">
 </map>
+
+
+<h3>9.HTML add sheet</h3>
+
+<p>
+    每个表格从一个 table 标签开始。
+    每个表格行从 tr 标签开始。
+    每个表格的数据从 td 标签开始。
+</p>
+
+<p>
+    数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
+</p>
+
+<h4>两行三列:</h4>
+<div class="table-a">
+    <style>
+        /*.table-a table{ background:#F00}*/
+        .table-a table {
+            border-right: 4px solid #F00;
+            border-bottom: 4px solid #F00
+        }
+
+        .table-a table td {
+            border-left: 4px solid #F00;
+            border-top: 4px solid #F00
+        }
+
+        .table-a table th {
+            border-left: 4px solid #F00;
+            border-top: 4px solid #F00
+        }
+
+        /* css注释：只对table td标签设置红色边框样式 */
+    </style>
+
+    <table>
+        <!--tr 是行-->
+        <!--td 是列-->
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>1000</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+    </table>
+</div>
+
+<h4>这个表格没有边框:</h4>
+<table>
+    <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>500</td>
+        <td>600</td>
+    </tr>
+</table>
+
+<h4>这个表格没有边框:</h4>
+<table border="0">
+    <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>500</td>
+        <td>600</td>
+    </tr>
+</table>
+
+<h4>垂直标题:</h4>
+<table border="1">
+    <tr>
+        <th>First Name:</th>
+        <td>Bill Gates</td>
+    </tr>
+    <tr>
+        <th>Telephone:</th>
+        <td>555 77 854</td>
+    </tr>
+    <tr>
+        <th>Telephone:</th>
+        <td>555 77 855</td>
+    </tr>
+</table>
+
+<h4>带有标题的表格</h4>
+<table border="1">
+    <caption>Monthly savings</caption>
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+    </tr>
+    <tr>
+        <td>January</td>
+        <td>$100</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$50</td>
+    </tr>
+</table>
+
+<h4>单元格跨两列:</h4>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th colspan="2">Telephone</th>
+    </tr>
+    <tr>
+        <td>Bill Gates</td>
+        <td>555 77 854</td>
+        <td>555 77 855</td>
+    </tr>
+</table>
+
+<h4>单元格跨两行:</h4>
+<table border="1">
+    <tr>
+        <th>First Name:</th>
+        <td>Bill Gates</td>
+    </tr>
+    <tr>
+        <th rowspan="2">Telephone:</th>
+        <td>555 77 854</td>
+    </tr>
+    <tr>
+        <td>555 77 855</td>
+    </tr>
+</table>
+
+<h4>表格中含有其他标签:</h4>
+<table border="1">
+    <tr>
+        <td>
+            <p>这是一个段落</p>
+            <p>这是另一个段落</p>
+        </td>
+        <td>这个单元格包含一个表格:
+            <table border="1">
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>D</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>这个单元格包含一个列表
+            <ul>
+                <li>apples</li>
+                <li>bananas</li>
+                <li>pineapples</li>
+            </ul>
+        </td>
+        <td>HELLO</td>
+    </tr>
+</table>
+
+<h4>有单元格边距:</h4>
+<table border="1"
+       cellpadding="10">
+    <tr>
+        <td>First</td>
+        <td>Row</td>
+    </tr>
+    <tr>
+        <td>Second</td>
+        <td>Row</td>
+    </tr>
+</table>
+
+<h4>单元格间距="10":</h4>
+<table border="1" cellspacing="10">
+    <tr>
+        <td>First</td>
+        <td>Row</td>
+    </tr>
+    <tr>
+        <td>Second</td>
+        <td>Row</td>
+    </tr>
+</table>
+
+
+<h3>10.HTML add list</h3>
+<p>
+    ul是unordered lists的缩写 (无序列表)<br>
+    li是list item的缩写 （列表项目）<br>
+    ol是ordered lists的缩写（有序列表）<br>
+    dl是definition lists的英文缩写 (自定义列表)<br>
+    dt是definition term的缩写 (自定义列表组)<br>
+    dd是definition description的缩写（自定义列表描述）<br>
+    nl是navigation lists的英文缩写 （导航列表）<br>
+    tr是table row的缩写 （表格中的一行）<br>
+    th是table header cell的缩写 （表格中的表头）<br>
+    td是table data cell的缩写 （表格中的一个单元格）<br>
+</p>
+
+<h4>无序列表:</h4>
+<ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+</ul>
+<ol>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+</ol>
+
+<ol start="50">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+</ol>
+
+<dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+</dl>
+
+<h4>编号列表：</h4>
+<ol>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+
+<h4>大写字母列表：</h4>
+<ol type="A">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+
+<h4>小写字母列表：</h4>
+<ol type="a">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+
+<h4>罗马数字列表：</h4>
+<ol type="I">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+
+<h4>小写罗马数字列表：</h4>
+<ol type="i">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+
+
+<h4>圆点列表：</h4>
+<ul style="list-style-type:disc">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ul>
+
+<h4>圆圈列表：</h4>
+<ul style="list-style-type:circle">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ul>
+
+<h4>正方形列表：</h4>
+<ul style="list-style-type:square">
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ul>
+
+<h4>嵌套列表：</h4>
+<ul>
+    <li>Coffee</li>
+    <li>Tea
+        <ul>
+            <li>Black tea</li>
+            <li>Green tea</li>
+        </ul>
+    </li>
+    <li>Milk</li>
+</ul>
+
+
+<h4>嵌套列表：</h4>
+<ul>
+    <li>Coffee</li>
+    <li>Tea
+        <ul>
+            <li>Black tea</li>
+            <li>Green tea
+                <ul>
+                    <li>China</li>
+                    <li>Africa</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Milk</li>
+</ul>
+
 
 </body>
 </html>
