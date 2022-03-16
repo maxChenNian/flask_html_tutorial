@@ -6,4 +6,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('a004_css_tutorial.html')
+    return render_template('a005_javescript_tutorial.html')
