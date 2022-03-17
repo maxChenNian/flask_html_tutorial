@@ -1,0 +1,307 @@
+let i; <!--声明为 HTML5 文档-->
+<!DOCTYPE html>
+<!--完整的HTML页面-->
+<html lang="en">
+<!--头部元素-->
+<head>
+    <meta charset="UTF-8">
+    <title>Fang:Hello web.</title>
+    {#link标签定义了文档与外部资源之间的关系#}
+    <link rel="icon"
+          href="{{ url_for('static', filename='images/favicon.ico') }}">
+    {#为网页定义描述内容:#}
+    <meta name="description" content="Fang's personal website.">
+    {#为搜索引擎定义关键词:#}
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    {#定义网页作者:#}
+    <meta name="author" content="Fang Chennian">
+    {#每30秒钟刷新当前页面:#}
+    <!--<meta http-equiv="refresh" content="240">-->
+
+    <!--    <style>-->
+    <!--        body {-->
+    <!--            background-color: #d0e4fe;-->
+    <!--        }-->
+
+    <!--        /**/-->
+    <!--        h1 {-->
+    <!--            color: orange;-->
+    <!--            text-align: center;-->
+    <!--        }-->
+
+    <!--        p {-->
+    <!--            font-family: "Times New Roman", serif;-->
+    <!--            font-size: 20px;-->
+    <!--        }-->
+    <!--    </style>-->
+</head>
+<body>
+
+
+<h1>1.JavaScript 显示输出</h1>
+<p>JavaScript 可以通过不同的方式来输出数据：</p>
+<ol>
+    <li>使用 window.alert() 弹出警告框。</li>
+    <li>使用 document.write() 方法将内容写到 HTML 文档中。</li>
+    <li>使用 innerHTML 写入到 HTML 元素。</li>
+    <li>使用 console.log() 写入到浏览器的控制台。</li>
+</ol>
+
+<script>
+    function winAlert() {
+        window.alert("nihao");
+    }
+</script>
+<button type="button" onclick="winAlert()">窗口消息提示</button>
+
+
+<p id="demo0">我的第一个段落。</p>
+<script>
+    document.getElementById("demo0").innerHTML = "段落已修改。";
+    document.write("<h6>随便写写，写不出来了</h6>")
+</script>
+
+<p id="demo2">点击按钮显示当前的时间为：</p>
+<script>
+    function showTime() {
+        let content = document.getElementById('demo2').innerHTML;
+        // console.log(content)
+        document.getElementById('demo2').innerHTML = content + Date();
+    }
+</script>
+<button type="button" onclick="showTime()">showTime</button>
+
+<h1>2.JavaScript 数据类型</h1>
+<h4>JavaScript 数组</h4>
+
+<p id="demo3">点击按钮创建数组：</p>
+<script>
+    function createList() {
+        // 方式一
+        // let cars = [];
+        // cars[0] = 'Saab';
+        // cars[1] = 'Volvo';
+        // cars[2] = 'BMW';
+        // 方式二
+        let cars = ["Saab", "Volvo", "BMW"]
+
+        let content = document.getElementById('demo3').innerHTML;
+        document.getElementById('demo3').innerHTML = content + cars;
+    }
+</script>
+<button type="button" onclick="createList()">createList</button>
+
+
+<p id="demo4">点击按钮创建对象：</p>
+<script>
+    function createObject() {
+        let person = {firstname: "Fang", lastname: "Chennian", age: "25"};
+
+        let content = document.getElementById('demo4').innerHTML;
+        document.getElementById('demo4').innerHTML = content + person["age"];
+    }
+</script>
+<button type="button" onclick="createObject()">createObject</button>
+
+<p>Undefined 和 Null<br>
+    Undefined 这个值表示变量不含有值。<br>
+    可以通过将变量的值设置为 null 来清空变量。</p>
+
+<p>点击按钮显示对象属性和对象方法：</p>
+<p id="demo6">不加括号的表达式：</p>
+<p id="demo7">添加括号的表达式：</p>
+<script>
+    function showObjectFunction() {
+        let person = {
+            firstName: "Fang",
+            lastName: "Chennian",
+            age: 25,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        let content = document.getElementById('demo6').innerHTML;
+        document.getElementById('demo6').innerHTML = content.substring(0, 9) +
+            person.fullName;
+        let content2 = document.getElementById('demo7').innerHTML;
+        document.getElementById('demo7').innerHTML = content2.substring(0, 9) +
+            person.fullName();
+    }
+</script>
+<button type="button" onclick="showObjectFunction()">showObjectFunction</button>
+
+
+<h1>3.JavaScript 函数</h1>
+<p id="demo8">调用参数的函数：</p>
+<script>
+    const a = 1;
+    b = 1;
+    console.log(a)
+    console.log(b)
+
+
+    function myFunction8(name, job) {
+        let content = document.getElementById('demo8').innerHTML;
+        document.getElementById('demo8').innerHTML = content.substring(0, 8) +
+            name + " is a " + job + ".";
+    }
+</script>
+<button
+        type="button" onclick="myFunction8('Mike','Teacher')">传入参数至函数中
+</button>
+
+
+<h1>4.JavaScript 字符串</h1>
+<p id="demo9">字符串的特性有：</p>
+<script>
+    function showString(str1, str2) {
+        let content = document.getElementById('demo9').innerHTML;
+        document.getElementById('demo9').innerHTML = content.substring(0, 8) +
+            "<br>" + "str1.length:" + str1.length + "<br>" +
+            "str2.length:" + str2.length + "<br>" +
+            "str1 的类型是:" + typeof str1 + "<br>";
+    }
+</script>
+<button
+        type="button" onclick="showString('Mike','Teacher')">字符串的特性
+</button>
+
+
+<p id="demo10"></p>
+<script>
+    var x = "John";              // x 是字符串
+    var y = new String("John");      // y 是一个对象
+    document.getElementById("demo10").innerHTML = x === y;
+</script>
+<p>=== 为绝对相等，即数据类型与值都必须相等。</p>
+
+
+<h1>4.JavaScript 循环</h1>
+<p id="demo_for">for 循环：</p>
+<script>
+    //第一种，使用while循环
+    function sleep(delay) {
+        let start = (new Date()).getTime();
+        while ((new Date()).getTime() - start < delay) {
+        }
+    }
+
+    function forFunction() {
+        cars = ["BMW", "Volvo", "Saab", "Ford"];
+        let content = document.getElementById('demo_for').innerHTML;
+
+        add_content = "";
+        for (let i = 0; i < cars.length; i++) {
+            add_content = add_content + cars[i] + "<br>";
+        }
+
+        document.getElementById('demo_for').innerHTML =
+            content.substring(0, 7) + "<br>" + add_content;
+
+    }
+</script>
+<button
+        type="button" onclick="forFunction()">for 循环
+</button>
+
+
+<h1>5.JavaScript 类型转换</h1>
+<p> typeof 操作符返回变量、对象、函数、表达式的类型。</p>
+<p id="demo12"></p>
+<script>
+    document.getElementById("demo12").innerHTML =
+        typeof "john" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof NaN + "<br>" +
+        typeof false + "<br>" +
+        typeof [1, 2, 3, 4] + "<br>" +
+        typeof {name: 'john', age: 34} + "<br>" +
+        typeof new Date() + "<br>" +
+        typeof function () {
+        } + "<br>" +
+        typeof myCar + "<br>" +
+        typeof null;
+</script>
+
+<h1>6.JavaScript 表单</h1>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == null || x === "") {
+            alert("需要输入名字。");
+            return false;
+        } else {
+            alert(x);
+        }
+    }
+</script>
+
+<form name="myForm" action="demo_form.php"
+      onsubmit="return validateForm()" method="post">
+    <label>
+        名字:
+        <input type="text" name="fname">
+    </label>
+    <input type="submit" value="提交">
+</form>
+
+
+<h4>JavaScript 验证输入</h4>
+
+<p>请输入 1 到 10 之间的数字：</p>
+
+<label for="numb"></label><input id="numb">
+
+<button type="button" onclick="myFunction()">提交</button>
+
+<p id="demo13"></p>
+
+<script>
+    function myFunction() {
+        var x, text;
+
+        // 获取 id="numb" 的值
+        x = document.getElementById("numb").value;
+
+        // 如果输入的值 x 不是数字或者小于 1 或者大于 10，则提示错误 Not a Number or less than one or greater than 10
+        if (isNaN(x) || x < 1 || x > 10) {
+            text = "输入错误";
+        } else {
+            text = "输入正确";
+        }
+        document.getElementById("demo13").innerHTML = text;
+    }
+</script>
+
+<h1>7.JavaScript 回调函数</h1>
+<p>回调函数等待 3 秒后执行。</p>
+<p id="demo_back">123</p>
+<script>
+    function print() {
+        document.getElementById("demo").innerHTML = "Fang wait 3s!";
+    }
+
+    function sleep_print() {
+        setTimeout(print, 3000);
+    }
+
+</script>
+<button type="button" onclick="sleep_print()">等待 3 秒</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
