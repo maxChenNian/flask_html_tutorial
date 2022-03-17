@@ -1,0 +1,85 @@
+<!--声明为 HTML5 文档-->
+<!DOCTYPE html>
+<!--完整的HTML页面-->
+<html lang="en">
+<!--头部元素-->
+<head>
+    <meta charset="UTF-8">
+    <title>Fang:Hello web.</title>
+    <!--{#link标签定义了文档与外部资源之间的关系#}-->
+    <!--<link rel="icon"-->
+    <!--    href="{{ url_for('static', filename='images/favicon.ico') }}">-->
+    <!--{#为网页定义描述内容:#}-->
+    <meta name="description" content="Fang's personal website.">
+    <!--{#为搜索引擎定义关键词:#}-->
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <!--{#定义网页作者:#}-->
+    <meta name="author" content="Fang Chennian">
+    <!--{#每30秒钟刷新当前页面:#}-->
+    <!--<meta http-equiv="refresh" content="240">-->
+
+    <!--    <style>-->
+    <!--        body {-->
+    <!--            background-color: #d0e4fe;-->
+    <!--        }-->
+
+    <!--        /**/-->
+    <!--        h1 {-->
+    <!--            color: orange;-->
+    <!--            text-align: center;-->
+    <!--        }-->
+
+    <!--        p {-->
+    <!--            font-family: "Times New Roman", serif;-->
+    <!--            font-size: 20px;-->
+    <!--        }-->
+    <!--    </style>-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+
+<div id="hello-vue" class="demo">
+    {{ message }}
+</div>
+
+<style>
+    .demo {
+        font-family: sans-serif;
+        border: 1px solid #eee;
+        border-radius: 200px;
+        padding: 20px 30px;
+        margin-top: 1em;
+        margin-bottom: 40px;
+        user-select: none;
+        overflow-x: auto;
+    }
+</style>
+
+
+<script>
+    const HelloVueApp = {
+        data: function data() {
+            return {
+                message: 'Hello Vue!! nishi wode yan!'
+            }
+        }
+    }
+
+    Vue.createApp(HelloVueApp).mount('#hello-vue')
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
